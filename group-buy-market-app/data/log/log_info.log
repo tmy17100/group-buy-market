@@ -58,3 +58,60 @@
 25-11-11.11:05:14.725 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":80.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
 25-11-11.11:05:14.739 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-11-11.11:05:14.759 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-11-11.16:39:01.606 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 22976 (started by tanmengyang in D:\JAVA-Practice\group-buy-market\group-buy-market-app)
+25-11-11.16:39:01.607 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-11-11.16:39:02.689 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-11-11.16:39:02.692 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-11-11.16:39:02.744 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+25-11-11.16:39:04.632 [main            ] INFO  Version                - Redisson 3.26.0
+25-11-11.16:39:05.466 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:39:05.498 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:39:07.308 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-11-11.16:39:07.383 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 6.299 seconds (JVM running for 7.403)
+25-11-11.16:39:07.672 [main            ] INFO  TagService             - 人群标签批次任务 tagId:RQ_KJHKL98UU78H66554GFDV batchId:10001
+25-11-11.16:39:07.702 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-11-11.16:39:08.539 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-11-11.16:39:08.706 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-11-11.16:39:08.713 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-11-11.16:44:19.250 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 17860 (started by tanmengyang in D:\JAVA-Practice\group-buy-market\group-buy-market-app)
+25-11-11.16:44:19.251 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-11-11.16:44:20.577 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-11-11.16:44:20.587 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-11-11.16:44:20.639 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+25-11-11.16:44:22.523 [main            ] INFO  Version                - Redisson 3.26.0
+25-11-11.16:44:23.310 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:44:23.328 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:44:25.159 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-11-11.16:44:25.245 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 6.7 seconds (JVM running for 7.899)
+25-11-11.16:44:25.566 [main            ] INFO  ITagServiceTest        - xiaofuge 存在，预期结果为 true，测试结果:false
+25-11-11.16:44:25.571 [main            ] INFO  ITagServiceTest        - gudebai 不存在，预期结果为 false，测试结果:false
+25-11-11.16:46:05.187 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 15076 (started by tanmengyang in D:\JAVA-Practice\group-buy-market\group-buy-market-app)
+25-11-11.16:46:05.188 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-11-11.16:46:06.395 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-11-11.16:46:06.400 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-11-11.16:46:06.459 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
+25-11-11.16:46:08.467 [main            ] INFO  Version                - Redisson 3.26.0
+25-11-11.16:46:09.276 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:46:09.297 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:46:11.823 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-11-11.16:46:11.937 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 7.331 seconds (JVM running for 8.549)
+25-11-11.16:46:12.269 [main            ] INFO  TagService             - 人群标签批次任务 tagId:RQ_KJHKL98UU78H66554GFDV batchId:10001
+25-11-11.16:46:12.307 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-11-11.16:46:13.368 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-11-11.16:46:13.559 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-11-11.16:46:13.571 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-11-11.16:51:26.891 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 7704 (started by tanmengyang in D:\JAVA-Practice\group-buy-market\group-buy-market-app)
+25-11-11.16:51:26.892 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+25-11-11.16:51:28.246 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-11-11.16:51:28.252 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-11-11.16:51:28.307 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+25-11-11.16:51:30.176 [main            ] INFO  Version                - Redisson 3.26.0
+25-11-11.16:51:31.070 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:51:31.092 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:16379
+25-11-11.16:51:32.977 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-11-11.16:51:33.064 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 6.752 seconds (JVM running for 7.949)
+25-11-11.16:51:33.343 [main            ] INFO  TagService             - 人群标签批次任务 tagId:RQ_KJHKL98UU78H66554GFDV batchId:10001
+25-11-11.16:51:33.375 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-11-11.16:51:34.216 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-11-11.16:51:34.387 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-11-11.16:51:34.401 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
