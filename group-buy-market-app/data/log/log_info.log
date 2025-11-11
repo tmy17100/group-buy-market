@@ -47,3 +47,14 @@
 25-11-10.14:37:03.383 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":0.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
 25-11-10.14:37:03.397 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-11-10.14:37:03.414 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-11-11.11:05:10.907 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 5820 (started by tanmengyang in D:\JAVA-Practice\group-buy-market\group-buy-market-app)
+25-11-11.11:05:10.909 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-11-11.11:05:13.358 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 2.945 seconds (JVM running for 3.905)
+25-11-11.11:05:13.604 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-11-11.11:05:14.475 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-11-11.11:05:14.529 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge requestParameter:{}
+25-11-11.11:05:14.713 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-11-11.11:05:14.714 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-11-11.11:05:14.725 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":80.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
+25-11-11.11:05:14.739 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-11-11.11:05:14.759 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
