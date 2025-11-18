@@ -30,3 +30,9 @@
 25-11-16.20:41:39.832 [redisson-3-8    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 0
 25-11-16.20:41:43.427 [http-nio-8091-exec-9] INFO  DCCController          - DCC 动态配置值变更 key:cutRange value:0
 25-11-16.20:41:43.434 [redisson-3-9    ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_cutRange 0
+25-11-16.20:42:17.563 [http-nio-8091-exec-4] INFO  DCCController          - DCC 动态配置值变更 key:downgradeSwitch value:1
+25-11-16.20:42:17.571 [redisson-3-10   ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_downgradeSwitch 1
+25-11-16.20:42:17.563 [http-nio-8091-exec-4] INFO  DCCController          - DCC 动态配置值变更 key:downgradeSwitch value:1
+25-11-16.20:42:17.571 [redisson-3-10   ] INFO  DCCValueBeanFactory    - DCC 节点监听，动态设置值 group_buy_market_dcc_downgradeSwitch 1
+25-11-16.21:12:20.066 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-11-16.21:12:20.084 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
