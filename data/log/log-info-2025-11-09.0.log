@@ -1,0 +1,11 @@
+25-11-09.19:35:36.545 [main            ] INFO  Application            - Starting Application using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 33492 (D:\JAVA-Practice\group-buy-market\group-buy-market-app\target\classes started by tanmengyang in D:\JAVA-Practice\group-buy-market)
+25-11-09.19:35:36.547 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-11-09.19:35:37.472 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-11-09.19:35:37.481 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-11-09.19:35:37.481 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-11-09.19:35:37.481 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-11-09.19:35:37.602 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-11-09.19:35:37.602 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1011 ms
+25-11-09.19:35:38.107 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-11-09.19:35:38.120 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-11-09.19:35:38.126 [main            ] INFO  Application            - Started Application in 2.05 seconds (JVM running for 3.195)
