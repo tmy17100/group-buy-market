@@ -1,14 +1,14 @@
-25-11-17.22:15:46.667 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"714931425030","source":"s01","userId":"xiaofuge"}
+25-11-20.21:02:55.947 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"483486182538","source":"s01","userId":"xiaofuge"}
 cn.bugstack.types.exception.AppException: null
 	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:38)
-	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:1)
 	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:21)
 	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:13)
 	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
 	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:1)
 	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:21)
 	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
-	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:98)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:96)
 	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
