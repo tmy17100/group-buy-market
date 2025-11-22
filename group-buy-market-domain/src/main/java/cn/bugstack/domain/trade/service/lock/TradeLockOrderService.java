@@ -6,7 +6,7 @@ import cn.bugstack.domain.trade.model.entity.*;
 import cn.bugstack.domain.trade.model.valobj.GroupBuyProgressVO;
 
 import cn.bugstack.domain.trade.service.ITradeLockOrderService;
-import cn.bugstack.domain.trade.service.lock.factory.TradeRuleFilterFactory;
+import cn.bugstack.domain.trade.service.lock.factory.TradeLockRuleFilterFactory;
 import cn.bugstack.types.design.framework.link.model2.chain.BusinessLinkedList;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class TradeLockOrderService implements ITradeLockOrderService {
     @Resource
     private ITradeRepository repository;
     @Resource
-    private BusinessLinkedList<TradeRuleCommandEntity, TradeRuleFilterFactory.DynamicContext,TradeRuleFilterBackEntity>tradeRuleFilter;
+    private BusinessLinkedList<TradeLockRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeLockRuleFilterBackEntity>tradeRuleFilter;
 
     @Override
     public MarketPayOrderEntity queryNoPayMarketPayOrderByOutTradeNo(String userId, String outTradeNo) {
@@ -42,11 +42,11 @@ public class TradeLockOrderService implements ITradeLockOrderService {
     @Override
     public MarketPayOrderEntity lockMarketPayOrder(UserEntity userEntity, PayActivityEntity payActivityEntity, PayDiscountEntity payDiscountEntity) throws Exception {
         log.info("拼团交易-锁定营销优惠支付订单:{} activityId:{} goodsId:{}", userEntity.getUserId(), payActivityEntity.getActivityId(), payDiscountEntity.getGoodsId());
-            TradeRuleFilterBackEntity tradeRuleFilterBackEntity= tradeRuleFilter.apply(TradeRuleCommandEntity.builder()
+            TradeLockRuleFilterBackEntity tradeLockRuleFilterBackEntity = tradeRuleFilter.apply(TradeLockRuleCommandEntity.builder()
               .activityId(payActivityEntity.getActivityId())
               .userId(userEntity.getUserId())
-              .build(),new TradeRuleFilterFactory.DynamicContext());
-            Integer userTakeOrderCount=tradeRuleFilterBackEntity.getUserTakeOrderCount();
+              .build(),new TradeLockRuleFilterFactory.DynamicContext());
+            Integer userTakeOrderCount= tradeLockRuleFilterBackEntity.getUserTakeOrderCount();
         // 构建聚合对象
         GroupBuyOrderAggregate groupBuyOrderAggregate = GroupBuyOrderAggregate.builder()
                 .userEntity(userEntity)

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
  * @description 交易支付订单实体对象
@@ -24,5 +26,8 @@ public class TradePaySuccessEntity {
     private String userId;
     /** 外部交易单号 */
     private String outTradeNo;
+
+    /** 外部交易时间 */
+    private Date outTradeTime;
 
 }
