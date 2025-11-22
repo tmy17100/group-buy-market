@@ -18,6 +18,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MarketPayOrderEntity {
+    /**排单组队Id**/
+    private String teamId;
 
     /** 预购订单ID */
     private String orderId;

@@ -1,4 +1,4 @@
-25-11-20.21:02:55.947 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"483486182538","source":"s01","userId":"xiaofuge"}
+25-11-22.18:34:21.526 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"972426490911","source":"s01","userId":"xfg01"}
 cn.bugstack.types.exception.AppException: null
 	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:38)
 	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:1)
