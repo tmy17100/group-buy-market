@@ -175,3 +175,4 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
 	... 29 common frames omitted
 25-11-22.22:16:05.680 [main            ] ERROR OutTradeNoRuleFilter   - 不存在的外部交易单号或用户已退单，不需要做支付订单结算:xfg04 outTradeNo:075605651839
+25-11-23.16:49:12.850 [main            ] ERROR OutTradeNoRuleFilter   - 不存在的外部交易单号或用户已退单，不需要做支付订单结算:xfg03 outTradeNo:536311764349

@@ -19,6 +19,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <!-- 系统模块 -->
+        <!-- http 接口框架 https://bugstack.cn/md/road-map/http.html -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp-sse</artifactId>
+        </dependency>
         <dependency>
             <groupId>cn.bugstack</groupId>
             <artifactId>group-buy-market-domain</artifactId>
