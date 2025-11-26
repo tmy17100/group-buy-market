@@ -28,7 +28,8 @@ public class DCCService {
     private String scBlacklist;
 
     public boolean isDowngradeSwitch() {
-        return "1".equals(downgradeSwitch);
+        return false;
+        //return "1".equals(downgradeSwitch);
     }
 
     public boolean isCutRange(String userId) {

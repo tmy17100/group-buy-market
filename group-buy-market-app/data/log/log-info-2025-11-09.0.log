@@ -1,8 +1,0 @@
-25-11-09.19:35:49.104 [main            ] INFO  GroupBuyDiscountDaoTest - Starting GroupBuyDiscountDaoTest using Java 1.8.0_391 on LAPTOP-URVDDIID with PID 29948 (started by tanmengyang in D:\JAVA-Practice\group-buy-market\group-buy-market-app)
-25-11-09.19:35:49.105 [main            ] INFO  GroupBuyDiscountDaoTest - The following 1 profile is active: "dev"
-25-11-09.19:35:51.093 [main            ] INFO  GroupBuyDiscountDaoTest - Started GroupBuyDiscountDaoTest in 2.503 seconds (JVM running for 3.475)
-25-11-09.19:35:51.342 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-11-09.19:35:52.139 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-11-09.19:35:52.364 [main            ] INFO  GroupBuyDiscountDaoTest - 测试结果:[{"createTime":1733538015000,"discountDesc":"测试优惠","discountId":25120207,"discountName":"测试优惠","discountType":0,"id":1,"marketExpr":"20","marketPlan":"ZJ","updateTime":1734750812000}]
-25-11-09.19:35:52.375 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-11-09.19:35:52.390 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

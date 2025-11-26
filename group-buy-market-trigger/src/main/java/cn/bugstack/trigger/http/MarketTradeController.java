@@ -58,7 +58,7 @@ public class MarketTradeController implements IMarketTradeService {
              String notifyUrl = lockMarketPayOrderRequestDTO.getNotifyUrl();
             log.info("营销交易锁单:{} LockMarketPayOrderRequestDTO:{}", userId, JSON.toJSONString(lockMarketPayOrderRequestDTO));
 
-            if (StringUtils.isBlank(userId) || StringUtils.isBlank(source) || StringUtils.isBlank(channel) || StringUtils.isBlank(goodsId) || StringUtils.isBlank(goodsId) || null == activityId||StringUtils.isBlank(notifyUrl)) {
+            if (StringUtils.isBlank(userId) || StringUtils.isBlank(source) || StringUtils.isBlank(channel) || StringUtils.isBlank(outTradeNo) || StringUtils.isBlank(goodsId) || null == activityId||StringUtils.isBlank(notifyUrl)) {
                 return Response.<LockMarketPayOrderResponseDTO>builder()
                         .code(ResponseCode.ILLEGAL_PARAMETER.getCode())
                         .info(ResponseCode.ILLEGAL_PARAMETER.getInfo())
@@ -72,6 +72,8 @@ public class MarketTradeController implements IMarketTradeService {
                         .orderId(marketPayOrderEntity.getOrderId())
                         .deductionPrice(marketPayOrderEntity.getDeductionPrice())
                         .tradeOrderStatus(marketPayOrderEntity.getTradeOrderStatusEnumVO().getCode())
+                        .payPrice(marketPayOrderEntity.getPayPrice())
+                        .originalPrice(marketPayOrderEntity.getOriginalPrice())
                         .build();
 
                 log.info("交易锁单记录(存在):{} marketPayOrderEntity:{}", userId, JSON.toJSONString(marketPayOrderEntity));
