@@ -1,9 +1,7 @@
 package cn.bugstack.domain.trade.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import cn.bugstack.domain.trade.model.valobj.NotifyConfigVO;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -36,5 +34,7 @@ public class PayDiscountEntity {
     private BigDecimal payPrice;
     /** 回调地址 */
     private String notifyUrl;
+    //回调配置。也就是让调用方自己设置入参的回调类型
+   private NotifyConfigVO notifyConfigVO;
 
 }

@@ -32,7 +32,7 @@ public class DCCControllerTest {
     @Test
     public void test_updateConfig() {
         // 动态调整配置
-        dccService.updateConfig("downgradeSwitch", "1");
+        dccService.updateConfig("downgradeSwitch", "0");
     }
 
     @Test
