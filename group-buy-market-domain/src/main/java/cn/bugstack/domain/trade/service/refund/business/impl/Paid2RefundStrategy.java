@@ -36,7 +36,7 @@ public class Paid2RefundStrategy implements IRefundOrderStrategy {
     @Override
     public void refundOrder(TradeRefundOrderEntity tradeRefundOrderEntity) {
         log.info("退单；已经支付，未成团 userId:{} teamId:{} orderId:{}", tradeRefundOrderEntity.getUserId(), tradeRefundOrderEntity.getTeamId(), tradeRefundOrderEntity.getOrderId());
-        NotifyTaskEntity notifyTaskEntity=repository.paid2Refund(GroupBuyRefundAggregate. Paid2RefundAggregate(tradeRefundOrderEntity,-1,-1));
+        NotifyTaskEntity notifyTaskEntity=repository.paid2Refund(GroupBuyRefundAggregate.buildPaid2RefundAggregate(tradeRefundOrderEntity,-1,-1));
         if(null!=notifyTaskEntity){
             threadPoolExecutor.execute(() -> {
                 Map<String,Integer>notifyresultMap=null;
