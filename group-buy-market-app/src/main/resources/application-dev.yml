@@ -18,7 +18,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://127.0.0.1:3306/group_buy_market?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
+    url: jdbc:mysql://localhost:13306/group_buy_market?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
   hikari:
     pool-name: Retail_HikariCP
@@ -32,7 +32,7 @@ spring:
   type: com.zaxxer.hikari.HikariDataSource
   # RabbitMQ
   rabbitmq:
-    addresses: 192.168.1.109
+    addresses: localhost
     port: 5672
     username: admin
     password: admin
@@ -63,7 +63,7 @@ mybatis:
 redis:
   sdk:
     config:
-      host: 192.168.1.109
+      host: localhost
       port: 16379
       pool-size: 10
       min-idle-size: 5

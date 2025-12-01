@@ -18,6 +18,8 @@ public class TradeLockRuleFilterBackEntity {
 
     // 用户参与活动的订单量
     private Integer userTakeOrderCount;
+    // 恢复组队库存缓存key
+    private String recoveryTeamStockKey;//指当用户成功抢占库存但订单锁定失败时，需要释放的库存额度（避免库存被无效占用）
 
 
 }
