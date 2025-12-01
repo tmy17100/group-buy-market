@@ -26,6 +26,8 @@ public class DCCService {
     private String cutRange;
     @DCCValue("scBlacklist:s02c02")//黑名单渠道
     private String scBlacklist;
+    @DCCValue("cacheOpenSwitch:0")
+    private String cacheOpenSwitch;//0默认开启
 
     public boolean isDowngradeSwitch() {
         return false;
@@ -52,6 +54,9 @@ public class DCCService {
     public boolean isSCBlackIntercept(String source, String channel) {
         List<String> list = Arrays.asList(scBlacklist.split(Constants.SPLIT));
         return list.contains(source + channel);
+    }
+    public boolean isCacheOpenSwitch() {
+        return "0".equals(cacheOpenSwitch);
     }
 
 
