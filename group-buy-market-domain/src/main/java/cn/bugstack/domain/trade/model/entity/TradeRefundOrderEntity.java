@@ -32,4 +32,6 @@ public class TradeRefundOrderEntity {
      */
     private String orderId;
 
+    //活动Id
+    private Long activityId;
 }
