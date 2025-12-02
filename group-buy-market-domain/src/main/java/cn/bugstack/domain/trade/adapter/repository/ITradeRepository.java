@@ -54,4 +54,5 @@ public interface ITradeRepository {
 
     NotifyTaskEntity paidTeam2Refund(GroupBuyRefundAggregate groupBuyRefundAggregate);
 
+    void refund2AddRecovery(String recoveryTeamStockKey, String orderId);
 }

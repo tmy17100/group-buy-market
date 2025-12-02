@@ -26,14 +26,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class TradeLockRuleFilterFactory {
 
+    private static final String teamStockKey = "group_buy_market_team_stock_key_";
+
     @Bean("tradeRuleFilter")
-    public BusinessLinkedList<TradeLockRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeLockRuleFilterBackEntity> tradeRuleFilter(
+    public BusinessLinkedList<TradeLockRuleCommandEntity, DynamicContext, TradeLockRuleFilterBackEntity> tradeRuleFilter(
             ActivityUsabilityRuleFilter activityUsabilityRuleFilter,
             UserTakeLimitRuleFilter userTakeLimitRuleFilter,
             TeamStockOccupyRuleFilter teamStockOccupyRuleFilter) {
 
         // 组装链
-        LinkArmory<TradeLockRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeLockRuleFilterBackEntity> linkArmory =
+        LinkArmory<TradeLockRuleCommandEntity, DynamicContext, TradeLockRuleFilterBackEntity> linkArmory =
                 new LinkArmory<>("交易规则过滤链",
                         activityUsabilityRuleFilter,
                         userTakeLimitRuleFilter,
@@ -49,22 +51,28 @@ public class TradeLockRuleFilterFactory {
     @NoArgsConstructor
     public static class DynamicContext {
 
-        private String teamStockKey = "group_buy_market_team_stock_key_";
-
         private GroupBuyActivityEntity groupBuyActivity;
 
         private Integer userTakeOrderCount;
 
         public String generateTeamStockKey(String teamId) {
             if (StringUtils.isBlank(teamId)) return null;
-            return teamStockKey + groupBuyActivity.getActivityId() + "_" + teamId;
+            return TradeLockRuleFilterFactory.generateTeamStockKey(groupBuyActivity.getActivityId(), teamId);
         }
 
         public String generateRecoveryTeamStockKey(String teamId) {
             if (StringUtils.isBlank(teamId)) return null;
-            return teamStockKey + groupBuyActivity.getActivityId() + "_" + teamId + "_recovery";
+            return TradeLockRuleFilterFactory.generateRecoveryTeamStockKey(groupBuyActivity.getActivityId(), teamId);
         }
 
+    }
+
+    public static String generateTeamStockKey(Long activityId, String teamId){
+        return teamStockKey + activityId + "_" + teamId;
+    }
+
+    public static String generateRecoveryTeamStockKey(Long activityId, String teamId) {
+        return teamStockKey + activityId + "_" + teamId + "_recovery";
     }
 
 }

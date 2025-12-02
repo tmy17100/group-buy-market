@@ -74,7 +74,7 @@ public class MarketTradeController implements IMarketTradeService {
 
             // 查询 outTradeNo 是否已经存在交易记录
             MarketPayOrderEntity marketPayOrderEntity = tradeOrderService.queryNoPayMarketPayOrderByOutTradeNo(userId, outTradeNo);
-            if (null != marketPayOrderEntity&& TradeOrderStatusEnumVO.CREATE.equals(marketPayOrderEntity.getTradeOrderStatusEnumVO())) {
+            if (null != marketPayOrderEntity && TradeOrderStatusEnumVO.CREATE.equals(marketPayOrderEntity.getTradeOrderStatusEnumVO())) {
                 LockMarketPayOrderResponseDTO lockMarketPayOrderResponseDTO = LockMarketPayOrderResponseDTO.builder()
                         .orderId(marketPayOrderEntity.getOrderId())
                         .originalPrice(marketPayOrderEntity.getOriginalPrice())
@@ -164,6 +164,7 @@ public class MarketTradeController implements IMarketTradeService {
                             .deductionPrice(marketPayOrderEntity.getDeductionPrice())
                             .payPrice(marketPayOrderEntity.getPayPrice())
                             .tradeOrderStatus(marketPayOrderEntity.getTradeOrderStatusEnumVO().getCode())
+                            .teamId(marketPayOrderEntity.getTeamId())
                             .build())
                     .build();
         } catch (AppException e) {
