@@ -14,25 +14,28 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * @author TanMengyang
- * @description
- * @create 2025-12-01 18:36
+ * 交易任务（MT/HTTP）服务
+ *
+ * @author xiaofuge bugstack.cn @小傅哥
+ * 2025/7/12 21:15
  */
 @Slf4j
 @Service
-public class TradeTaskService implements ITradeTaskService
-{
+public class TradeTaskService implements ITradeTaskService {
+
     @Resource
     private ITradeRepository repository;
     @Resource
     private ITradePort port;
-
+    @Resource
+    private ThreadPoolExecutor threadPoolExecutor;
 
     @Override
     public Map<String, Integer> execNotifyJob() throws Exception {
-        log.info("拼团交易-执行结算通知任务");
+        log.info("拼团交易-执行回调通知任务");
 
         // 查询未执行任务
         List<NotifyTaskEntity> notifyTaskEntityList = repository.queryUnExecutedNotifyTaskList();
@@ -42,14 +45,14 @@ public class TradeTaskService implements ITradeTaskService
 
     @Override
     public Map<String, Integer> execNotifyJob(String teamId) throws Exception {
-        log.info("拼团交易-执行结算通知回调，指定 teamId:{}", teamId);
+        log.info("拼团交易-执行回调通知回调，指定 teamId:{}", teamId);
         List<NotifyTaskEntity> notifyTaskEntityList = repository.queryUnExecutedNotifyTaskList(teamId);
         return execNotifyJob(notifyTaskEntityList);
     }
 
     @Override
     public Map<String, Integer> execNotifyJob(NotifyTaskEntity notifyTaskEntity) throws Exception {
-        log.info("拼团交易-执行结算通知回调，指定 teamId:{} notifyTaskEntity:{}", notifyTaskEntity.getTeamId(), JSON.toJSONString(notifyTaskEntity));
+        log.info("拼团交易-执行回调通知回调，指定 teamId:{} notifyTaskEntity:{}", notifyTaskEntity.getTeamId(), JSON.toJSONString(notifyTaskEntity));
         return execNotifyJob(Collections.singletonList(notifyTaskEntity));
     }
 
@@ -61,18 +64,18 @@ public class TradeTaskService implements ITradeTaskService
 
             // 更新状态判断&变更数据库表回调任务状态
             if (NotifyTaskHTTPEnumVO.SUCCESS.getCode().equals(response)) {
-                int updateCount = repository.updateNotifyTaskStatusSuccess(notifyTask.getTeamId());
+                int updateCount = repository.updateNotifyTaskStatusSuccess(notifyTask);
                 if (1 == updateCount) {
                     successCount += 1;
                 }
             } else if (NotifyTaskHTTPEnumVO.ERROR.getCode().equals(response)) {
                 if (notifyTask.getNotifyCount() > 4) {
-                    int updateCount = repository.updateNotifyTaskStatusError(notifyTask.getTeamId());
+                    int updateCount = repository.updateNotifyTaskStatusError(notifyTask);
                     if (1 == updateCount) {
                         errorCount += 1;
                     }
                 } else {
-                    int updateCount = repository.updateNotifyTaskStatusRetry(notifyTask.getTeamId());
+                    int updateCount = repository.updateNotifyTaskStatusRetry(notifyTask);
                     if (1 == updateCount) {
                         retryCount += 1;
                     }
@@ -88,4 +91,5 @@ public class TradeTaskService implements ITradeTaskService
 
         return resultMap;
     }
+
 }

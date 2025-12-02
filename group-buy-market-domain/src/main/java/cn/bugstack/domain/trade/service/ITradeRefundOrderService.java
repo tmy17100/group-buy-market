@@ -12,7 +12,7 @@ import cn.bugstack.domain.trade.model.valobj.TeamRefundSuccess;
  */
 public interface ITradeRefundOrderService {
 
-    TradeRefundBehaviorEntity refundOrder(TradeRefundCommandEntity tradeRefundCommandEntity);
+    TradeRefundBehaviorEntity refundOrder(TradeRefundCommandEntity tradeRefundCommandEntity) throws Exception;
     /**
      * 退单恢复锁单库存
      * @param teamRefundSuccess 退单消息
