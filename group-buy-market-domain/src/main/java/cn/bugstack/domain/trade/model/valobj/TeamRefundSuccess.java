@@ -1,9 +1,6 @@
 package cn.bugstack.domain.trade.model.valobj;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * 拼团退单消息
@@ -41,5 +38,10 @@ public class TeamRefundSuccess {
      * 预购订单ID
      */
     private String orderId;
+
+    /**
+     * 外部交易单号
+     */
+    private String outTradeNo;
 
 }

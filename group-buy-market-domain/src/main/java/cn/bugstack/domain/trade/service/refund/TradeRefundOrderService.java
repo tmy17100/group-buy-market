@@ -1,46 +1,52 @@
 package cn.bugstack.domain.trade.service.refund;
 
+import cn.bugstack.domain.activity.model.entity.UserGroupBuyOrderDetailEntity;
 import cn.bugstack.domain.trade.adapter.repository.ITradeRepository;
 import cn.bugstack.domain.trade.model.entity.*;
 import cn.bugstack.domain.trade.model.valobj.RefundTypeEnumVO;
+import cn.bugstack.domain.trade.model.valobj.TaskNotifyCategoryEnumVO;
 import cn.bugstack.domain.trade.model.valobj.TeamRefundSuccess;
 import cn.bugstack.domain.trade.model.valobj.TradeOrderStatusEnumVO;
 import cn.bugstack.domain.trade.service.ITradeRefundOrderService;
+import cn.bugstack.domain.trade.service.lock.factory.TradeLockRuleFilterFactory;
 import cn.bugstack.domain.trade.service.refund.business.IRefundOrderStrategy;
 import cn.bugstack.domain.trade.service.refund.factory.TradeRefundRuleFilterFactory;
 import cn.bugstack.types.design.framework.link.model2.chain.BusinessLinkedList;
 import cn.bugstack.types.enums.GroupBuyOrderEnumVO;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
- * @author TanMengyang
- * @description
- * @create 2025-12-01 12:01
+ * 退单，逆向流程服务
+ *
+ * @author xiaofuge bugstack.cn @小傅哥
+ * 2025/7/8 07:27
  */
 @Slf4j
 @Service
 public class TradeRefundOrderService implements ITradeRefundOrderService {
 
+    @Resource
+    private BusinessLinkedList<TradeRefundCommandEntity, TradeRefundRuleFilterFactory.DynamicContext, TradeRefundBehaviorEntity> tradeRefundRuleFilter;
+
+    private final ITradeRepository repository;
 
     private final Map<String, IRefundOrderStrategy> refundOrderStrategyMap;
 
-
-    public TradeRefundOrderService(Map<String, IRefundOrderStrategy> refundOrderStrategyMap) {
+    public TradeRefundOrderService(ITradeRepository repository, Map<String, IRefundOrderStrategy> refundOrderStrategyMap) {
+        this.repository = repository;
         this.refundOrderStrategyMap = refundOrderStrategyMap;
     }
-
-    @Resource
-    private BusinessLinkedList<TradeRefundCommandEntity, TradeRefundRuleFilterFactory.DynamicContext, TradeRefundBehaviorEntity> tradeRefundRuleFilter;
 
     @Override
     public TradeRefundBehaviorEntity refundOrder(TradeRefundCommandEntity tradeRefundCommandEntity) throws Exception {
         log.info("逆向流程，退单操作 userId:{} outTradeNo:{}", tradeRefundCommandEntity.getUserId(), tradeRefundCommandEntity.getOutTradeNo());
-
-        return tradeRefundRuleFilter.apply(tradeRefundCommandEntity,new TradeRefundRuleFilterFactory.DynamicContext());
+        return tradeRefundRuleFilter.apply(tradeRefundCommandEntity, new TradeRefundRuleFilterFactory.DynamicContext());
     }
 
     @Override
@@ -55,4 +61,11 @@ public class TradeRefundOrderService implements ITradeRefundOrderService {
         // 逆向库存操作，恢复锁单量
         refundOrderStrategy.reverseStock(teamRefundSuccess);
     }
+
+    @Override
+    public List<UserGroupBuyOrderDetailEntity> queryTimeoutUnpaidOrderList() {
+        log.info("扫描数据，超时组队未支付订单");
+        return repository.queryTimeoutUnpaidOrderList();
+    }
+
 }

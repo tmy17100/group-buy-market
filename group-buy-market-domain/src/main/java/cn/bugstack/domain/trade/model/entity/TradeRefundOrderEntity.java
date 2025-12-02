@@ -28,10 +28,18 @@ public class TradeRefundOrderEntity {
     private String teamId;
 
     /**
+     * 活动ID
+     */
+    private Long activityId;
+
+    /**
      * 预购订单ID
      */
     private String orderId;
 
-    //活动Id
-    private Long activityId;
+    /**
+     * 外部交易单号
+     */
+    private String outTradeNo;
+
 }
